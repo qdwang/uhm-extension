@@ -1,0 +1,109 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "uhm",
+	"patterns": [
+		{
+			"include": "#info"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"info": {
+			"name": "string.quoted.double.uhm",
+			"begin": "\\b(Info)\\s+?\"",
+			"end": "\"",
+			"captures": {
+				"1": { "name": "support.class.builtin.uhm" }
+			}
+		},
+		"comments": {
+			"name": "comment.block.uhm",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "support.class.builtin.uhm",
+					"match": "\\b(NumFrames|Seed|Wave|Spectrum|Phase|Import|Export|Move|Interpolate|Normalize|Envelope)\\b"
+				},
+				{
+					"name": "keyword.control.uhm",
+					"match": "(?i)\\b(start|end|highest|lowest|blend|direction|target|from|source|to|type|snippets|threshold|weighting|metric|dB|base)\\b"
+				},
+				{
+					"name": "keyword.control.envelope.uhm",
+					"match": "(?i)\\b(curve|[Tt][1-8]|[Ll][0-8])\\b"
+				},
+				{
+					"name": "constant.numeric.uhm",
+					"match": "\\d+\\.?|\\.\\d+"
+				},
+				{
+					"name": "support.function.blend_mode.uhm",
+					"match": "(?i)\\b(replace|add|sub|multiply|multiplyAbs|divide|divideAbs|min|max)\\b"
+				},
+				{
+					"name": "support.function.direction.uhm",
+					"match": "(?i)\\b(forward|backward)\\b"
+				},
+				{
+					"name": "variable.target.uhm",
+					"match": "\\b(main|aux1|aux2)\\b"
+				},
+				{
+					"name": "support.function.type.uhm",
+					"match": "(?i)\\b(switch|crossfade|spectrum|zerophase|morph1|morph2)\\b"
+				},
+				{
+					"name": "support.function.weighting.uhm",
+					"match": "(?i)\\b(none|distance|level|both)\\b"
+				},
+				{
+					"name": "support.function.metric.uhm",
+					"match": "(?i)\\b(RMS|peak|average|ptp)\\b"
+				},
+				{
+					"name": "support.function.base.uhm",
+					"match": "(?i)\\b(all|each)\\b"
+				},
+				{
+					"name": "support.function.curve.uhm",
+					"match": "(?i)\\b(linear|exponential|logarithmic|quadric)\\b"
+				},
+				{
+					"name": "comment.line",
+					"match": "//.*$"
+				}
+			]
+		},
+		"strings": {
+			"name": "formula.uhm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.numeric.uhm",
+					"match": "\\d+\\.?|\\.\\d+"
+				},
+				{
+					"name": "support.function.uhm",
+					"match": "\\b(main_fi|main_fp|aux1_fi|aux1_fp|aux2_fi|aux2_fp|env|lowpass|bandpass|highpass|acos|asin|atan|atan2|cos|cosh|sin|sinh|tan|tanh|abs|ceil|floor|frac|round|select|exp|fac|ln|log|log10|pow|sqrt|lin_db|db_lin)\\b"
+				},
+				{
+					"name": "variable.uhm",
+					"match": "\\b(e|pi|x|y|frame|table|index|phase|rand|randf|rands|main|aux1|aux2)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.uhm"
+}

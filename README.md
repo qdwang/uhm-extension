@@ -1,2 +1,9 @@
-# uhm
-uhm script extension for vscode
+# uhm Wavetable Extension
+
+Extension for uhm wavetable script in Hive2(u-he Software).
+
+## Features
+
+* Syntax highlight
+
+**Enjoy!**
