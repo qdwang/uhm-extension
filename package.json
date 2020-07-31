@@ -2,7 +2,7 @@
     "name": "uhm-extension",
     "displayName": "uhm Wavetable Extension",
     "description": "Extension for uhm wavetable script in (u-he Software).",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "qdwang",
     "engines": {
         "vscode": "^1.47.0"
